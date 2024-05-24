@@ -1,0 +1,281 @@
+
+
+div #background {
+    size: 100%
+    background-color: black
+    opacity: 0.25
+}
+
+div #content {
+    size: 420 200
+    background-color: none
+
+    child-align: grid
+    grid-columns: 2
+
+    center: both
+
+    div {}
+    div #mod-title {
+        size: 100% 10
+        text-align: center
+        text-scale: 1.5
+        text-color: orange
+        text-shadow: true
+        background-color: none
+        inner-text: "&lAutoclicker"
+        center: horizontal
+    }
+
+    div #panel -left {
+        margin: 5
+        size: 200 100
+        background-color: #80000000
+        background-clip: margin
+        border-radius: 3
+        shadow-distance: 3
+        shadow-color: orange
+
+        div #title-shadow {
+            size: 100% 20
+            background-color: none
+            shadow-distance: 3
+            shadow-color: orange
+            opacity: 0.5
+        }
+
+        h4 {
+            inner-text: "Left Click"
+            inner-text-prefix: "&r"
+            text-shadow: true
+            text-color: orange
+            margin-top: 6
+            center: horizontal
+        }
+
+        div #settings {
+            size: 100%
+            margin-top: 27
+            margin-left: 7
+            background-color: none
+
+            child-align: grid
+            grid-columns: 2
+
+            checkbox #enabled -autoclicker:config.properties:left {}
+            label {
+                inner-text: "Enabled"
+                margin-left: 5
+            }
+
+            checkbox #spam -autoclicker:config.properties:left-spam {}
+            label {
+                inner-text: "Spam"
+                margin-left: 5
+            }
+
+            checkbox #hold -autoclicker:config.properties:left-hold {}
+            label {
+                inner-text: "Spam only when hold"
+                margin-left: 5
+            }
+
+            slider #cps -autoclicker:config.properties:left-cps {
+                width: 80
+                range: 1 100
+                decimal-places: 0
+            }
+            label {
+                inner-text: "CPS"
+                margin-left: 45
+                margin-top: 3
+            }
+
+            slider #chance -autoclicker:config.properties:left-chance {
+                width: 80
+                range: 0 1
+                decimal-places: 2
+            }
+            label {
+                inner-text: "Random"
+                margin-left: 45
+                margin-top: 3
+            }
+        }
+    }
+
+    div #panel -right {
+        margin: 5
+        size: 200 100
+        background-color: #80000000
+        background-clip: margin
+        border-radius: 3
+        shadow-distance: 3
+        shadow-color: orange
+
+        div #title-shadow {
+            size: 100% 20
+            background-color: none
+            shadow-distance: 3
+            shadow-color: orange
+            opacity: 0.5
+        }
+
+        h4 {
+            inner-text: "Right Click"
+            inner-text-prefix: "&r"
+            text-shadow: true
+            text-color: orange
+            margin-top: 6
+            center: horizontal
+        }
+
+        div #settings {
+            size: 100%
+            margin-top: 27
+            margin-left: 7
+            background-color: none
+
+            child-align: grid
+            grid-columns: 2
+
+            checkbox #enabled -autoclicker:config.properties:right {}
+            label {
+                inner-text: "Enabled"
+                margin-left: 5
+            }
+
+            checkbox #spam -autoclicker:config.properties:right-spam {}
+            label {
+                inner-text: "Spam"
+                margin-left: 5
+            }
+
+            checkbox #hold -autoclicker:config.properties:right-hold {}
+            label {
+                inner-text: "Spam only when hold"
+                margin-left: 5
+            }
+
+            slider #cps -autoclicker:config.properties:right-cps {
+                width: 80
+                range: 1 100
+                decimal-places: 0
+            }
+            label {
+                inner-text: "CPS"
+                margin-left: 45
+                margin-top: 3
+            }
+
+            slider #chance -autoclicker:config.properties:right-chance {
+                width: 80
+                range: 0 1
+                decimal-places: 2
+            }
+            label {
+                inner-text: "Random"
+                margin-left: 45
+                margin-top: 3
+            }
+        }
+    }
+
+    div #panel -bottom {
+        margin: 5
+        size: 410 100
+        background-color: #80000000
+        background-clip: margin
+        border-radius: 3
+        shadow-distance: 3
+        shadow-color: orange
+
+        div #title-shadow {
+            size: 100% 20
+            background-color: none
+            shadow-distance: 3
+            shadow-color: orange
+            opacity: 0.5
+        }
+
+        h4 {
+            inner-text: "Shared"
+            inner-text-prefix: "&r"
+            text-shadow: true
+            text-color: orange
+            margin-top: 6
+            center: horizontal
+        }
+
+        div #settings {
+            size: 400 70
+            y: 20
+            x: 5
+            margin-left: 5
+            background-color: none
+            background-clip: margin
+
+            child-align: grid
+            grid-columns: 2
+
+            scrollable: true
+
+            slider #chance -autoclicker:config.properties:max-attack-cooldown {
+                width: 80
+                range: 0 1
+                decimal-places: 2
+            }
+            label {
+                inner-text: "Max attack cooldown"
+                margin-left: 45
+                margin-top: 3
+                click-through: true
+            }
+
+            checkbox #enabled -autoclicker:config.properties:only-when-target {}
+            label {
+                inner-text: "Only when targeting entity"
+                margin-left: 5
+                click-through: true
+            }
+
+            checkbox #spam -autoclicker:config.properties:no-babies {}
+            label {
+                inner-text: "Stop when targeting baby entity"
+                margin-left: 5
+                click-through: true
+            }
+
+            checkbox #hold -autoclicker:config.properties:stop-when-target {}
+            label {
+                inner-text: "Stop when targeting entity"
+                margin-left: 5
+                click-through: true
+            }
+
+            checkbox #hold -autoclicker:config.properties:stop-when-damage {}
+            label {
+                inner-text: "Stop when take damage"
+                margin-left: 5
+                click-through: true
+            }
+
+            checkbox #hold -autoclicker:config.properties:stop-when-move {}
+            label {
+                inner-text: "Stop when player move"
+                margin-left: 5
+                click-through: true
+            }
+
+            checkbox #hold -autoclicker:config.properties:debug {}
+            label {
+                inner-text: "Send debug messages for noise distribution"
+                margin-left: 5
+                click-through: true
+            }
+        }
+    }
+}
+
+
+

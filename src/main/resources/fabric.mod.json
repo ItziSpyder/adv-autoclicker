@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "autoclicker",
+  "version": "${version}",
+  "name": "AutoClicker",
+  "description": "Various mouse-clicking methods",
+  "authors": [
+    "ImproperIssues"
+  ],
+  "contact": {
+    "repo": "https://github.com/ItziSpyder/AutoClicker"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/autoclicker/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "io.github.itzispyder.autoclicker.client.AutoClickerClient"
+    ],
+    "main": [
+      "io.github.itzispyder.autoclicker.AutoClicker"
+    ]
+  },
+  "mixins": [
+    "autoclicker.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": ">=${minecraft_version}",
+    "improperui": ">=${improperui_version}"
+  }
+}
