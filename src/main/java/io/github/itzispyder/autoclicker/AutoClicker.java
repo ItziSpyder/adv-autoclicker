@@ -27,9 +27,11 @@ public class AutoClicker implements ModInitializer, Global {
         Events.distributeNoise(Config.leftCps, Config.leftChance, Events.noiseMapLeft);
         Events.distributeNoise(Config.rightCps, Config.rightChance, Events.noiseMapRight);
 
-        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+        ClientTickEvents.START_CLIENT_TICK.register(client -> {
             Config.update();
             Events.onTick();
+        });
+        ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (BIND.wasPressed()) {
                 ImproperUIAPI.parseAndRunFile(modId, "screen.ui");
             }
