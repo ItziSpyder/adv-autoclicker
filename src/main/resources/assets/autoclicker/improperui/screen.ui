@@ -26,7 +26,7 @@ div #content {
         x: 15
         y: 22
 
-        h4 { inner-text: "&7Left Click"; text-scale: 0.7; x: 10; y: 5 } /* Bumped to 0.7 */
+        h4 { inner-text: "&7Left Click"; text-scale: 0.7; x: 10; y: 5 }
         checkbox #l-en -autoclicker:config.properties:left { size: 7 7; x: 10; y: 17 }
         label { inner-text: "Enabled"; text-scale: 0.6; x: 22; y: 17 }
         checkbox #l-sp -autoclicker:config.properties:left-spam { size: 7 7; x: 10; y: 29 }
@@ -34,16 +34,16 @@ div #content {
         checkbox #l-ho -autoclicker:config.properties:left-hold { size: 7 7; x: 10; y: 41 }
         label { inner-text: "Hold Only"; text-scale: 0.6; x: 22; y: 41 }
 
-        slider #cps-l -autoclicker:config.properties:left-cps { width: 85; height: 12; x: 10; y: 56; text-scale: 0.4 }
+        slider #cps-l -autoclicker:config.properties:left-cps { width: 85; height: 12; x: 10; y: 56; text-scale: 0.4; min: 1.0; max: 20.0 }
         label { inner-text: "CPS"; text-scale: 0.6; x: 10; y: 70 }
 
-        slider #rnd-l -autoclicker:config.properties:left-random { width: 85; height: 12; x: 10; y: 84; text-scale: 0.4 }
+        slider #rnd-l -autoclicker:config.properties:left-random { width: 85; height: 12; x: 10; y: 84; text-scale: 0.4; min: 0.0; max: 1.0 }
         label { inner-text: "Random"; text-scale: 0.6; x: 10; y: 98 }
     }
 
     div #right-section {
         size: 145 110
-        x: 165 /* Adjusted for wider left section */
+        x: 165
         y: 22
 
         h4 { inner-text: "&7Right Click"; text-scale: 0.7; x: 10; y: 5 }
@@ -54,10 +54,10 @@ div #content {
         checkbox #r-ho -autoclicker:config.properties:right-hold { size: 7 7; x: 10; y: 41 }
         label { inner-text: "Hold Only"; text-scale: 0.6; x: 22; y: 41 }
 
-        slider #cps-r -autoclicker:config.properties:right-cps { width: 85; height: 12; x: 10; y: 56; text-scale: 0.4 }
+        slider #cps-r -autoclicker:config.properties:right-cps { width: 85; height: 12; x: 10; y: 56; text-scale: 0.4; min: 1.0; max: 20.0 }
         label { inner-text: "CPS"; text-scale: 0.6; x: 10; y: 70 }
 
-        slider #rnd-r -autoclicker:config.properties:right-random { width: 85; height: 12; x: 10; y: 84; text-scale: 0.4 }
+        slider #rnd-r -autoclicker:config.properties:right-random { width: 85; height: 12; x: 10; y: 84; text-scale: 0.4; min: 0.0; max: 1.0 }
         label { inner-text: "Random"; text-scale: 0.6; x: 10; y: 98 }
     }
 
@@ -88,7 +88,7 @@ div #content {
         checkbox #s6 -autoclicker:config.properties:debug { size: 7 7; x: 140; y: 17 }
         label { inner-text: "Debug"; text-scale: 0.6; x: 152; y: 17 }
 
-        slider #max-cd -autoclicker:config.properties:max-attack-cooldown { width: 110; height: 12; x: 140; y: 35; text-scale: 0.4 }
+        slider #max-cd -autoclicker:config.properties:max-attack-cooldown { width: 110; height: 12; x: 140; y: 35; text-scale: 0.4; min: 0.0; max: 1.0 }
         label { inner-text: "Attack Cooldown"; text-scale: 0.6; x: 140; y: 50 }
     }
 }
