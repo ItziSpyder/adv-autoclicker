@@ -1,281 +1,108 @@
-
-
 div #background {
     size: 100%
     background-color: black
-    opacity: 0.25
+    opacity: 0.3
 }
 
 div #content {
-    size: 420 200
-    background-color: none
-
-    child-align: grid
-    grid-columns: 2
-
+    size: 400 280
+    background-color: #121212
+    border-radius: 5
+    border-color: orange
+    border-thickness: 1
     center: both
+    padding: 12
 
-    div {}
-    div #mod-title {
-        size: 100% 10
+    div #header {
+        size: 100% 20
         text-align: center
-        text-scale: 1.5
-        text-color: orange
-        text-shadow: true
-        background-color: none
         inner-text: "&lAutoclicker"
+        text-color: orange
+        text-scale: 1.2
+        margin-bottom: 15
+    }
+
+    div #main-layout {
+        size: 100% 110
+        child-align: grid
+        grid-columns: 2
+
+        div #left-side {
+            padding: 4
+            h4 { inner-text: "&7Left Click"; margin-bottom: 8 }
+            
+            checkbox #enabled -autoclicker:config.properties:left { size: 8 8 }
+            label { inner-text: " Enabled"; text-scale: 0.8 }
+
+            div #gap { size: 100% 4 }
+
+            checkbox #spam -autoclicker:config.properties:left-spam { size: 8 8 }
+            label { inner-text: " Spam"; text-scale: 0.8 }
+
+            div #gap { size: 100% 8 }
+
+            slider #cps -autoclicker:config.properties:left-cps { width: 150 }
+            label { inner-text: "Speed (CPS)"; text-scale: 0.7; margin-top: 2 }
+        }
+
+        div #right-side {
+            padding: 4
+            h4 { inner-text: "&7Right Click"; margin-bottom: 8 }
+
+            checkbox #enabled -autoclicker:config.properties:right { size: 8 8 }
+            label { inner-text: " Enabled"; text-scale: 0.8 }
+
+            div #gap { size: 100% 4 }
+
+            checkbox #spam -autoclicker:config.properties:right-spam { size: 8 8 }
+            label { inner-text: " Spam"; text-scale: 0.8 }
+
+            div #gap { size: 100% 8 }
+
+            slider #cps -autoclicker:config.properties:right-cps { width: 150 }
+            label { inner-text: "Speed (CPS)"; text-scale: 0.7; margin-top: 2 }
+        }
+    }
+
+    div #divider {
+        size: 95% 1
+        background-color: #2A2A2A
         center: horizontal
+        margin: 12 0
     }
 
-    div #panel -left {
-        margin: 5
-        size: 200 100
-        background-color: #80000000
-        background-clip: margin
-        border-radius: 3
-        shadow-distance: 3
-        shadow-color: orange
+    div #shared-settings {
+        size: 100% 90
+        scrollable: true
+        padding: 5
+        
+        child-align: grid
+        grid-columns: 1
 
-        div #title-shadow {
-            size: 100% 20
-            background-color: none
-            shadow-distance: 3
-            shadow-color: orange
-            opacity: 0.5
+        label { inner-text: "&6Global Settings"; margin-bottom: 6; text-scale: 0.9 }
+
+        div #row1 {
+            child-align: horizontal
+            checkbox -autoclicker:config.properties:no-babies { size: 8 8 }
+            label { inner-text: " Stop on Baby Entities"; margin-left: 6; text-scale: 0.8 }
         }
 
-        h4 {
-            inner-text: "Left Click"
-            inner-text-prefix: "&r"
-            text-shadow: true
-            text-color: orange
-            margin-top: 6
-            center: horizontal
+        div #row2 {
+            child-align: horizontal
+            checkbox -autoclicker:config.properties:stop-when-damage { size: 8 8 }
+            label { inner-text: " Stop on Damage"; margin-left: 6; text-scale: 0.8 }
         }
 
-        div #settings {
-            size: 100%
-            margin-top: 27
-            margin-left: 7
-            background-color: none
-
-            child-align: grid
-            grid-columns: 2
-
-            checkbox #enabled -autoclicker:config.properties:left {}
-            label {
-                inner-text: "Enabled"
-                margin-left: 5
-            }
-
-            checkbox #spam -autoclicker:config.properties:left-spam {}
-            label {
-                inner-text: "Spam"
-                margin-left: 5
-            }
-
-            checkbox #hold -autoclicker:config.properties:left-hold {}
-            label {
-                inner-text: "Spam only when hold"
-                margin-left: 5
-            }
-
-            slider #cps -autoclicker:config.properties:left-cps {
-                width: 80
-                range: 1 100
-                decimal-places: 0
-            }
-            label {
-                inner-text: "CPS"
-                margin-left: 45
-                margin-top: 3
-            }
-
-            slider #chance -autoclicker:config.properties:left-chance {
-                width: 80
-                range: 0 1
-                decimal-places: 2
-            }
-            label {
-                inner-text: "Random"
-                margin-left: 45
-                margin-top: 3
-            }
-        }
-    }
-
-    div #panel -right {
-        margin: 5
-        size: 200 100
-        background-color: #80000000
-        background-clip: margin
-        border-radius: 3
-        shadow-distance: 3
-        shadow-color: orange
-
-        div #title-shadow {
-            size: 100% 20
-            background-color: none
-            shadow-distance: 3
-            shadow-color: orange
-            opacity: 0.5
+        div #row3 {
+            child-align: horizontal
+            checkbox -autoclicker:config.properties:stop-when-move { size: 8 8 }
+            label { inner-text: " Stop on Movement"; margin-left: 6; text-scale: 0.8 }
         }
 
-        h4 {
-            inner-text: "Right Click"
-            inner-text-prefix: "&r"
-            text-shadow: true
-            text-color: orange
-            margin-top: 6
-            center: horizontal
-        }
-
-        div #settings {
-            size: 100%
-            margin-top: 27
-            margin-left: 7
-            background-color: none
-
-            child-align: grid
-            grid-columns: 2
-
-            checkbox #enabled -autoclicker:config.properties:right {}
-            label {
-                inner-text: "Enabled"
-                margin-left: 5
-            }
-
-            checkbox #spam -autoclicker:config.properties:right-spam {}
-            label {
-                inner-text: "Spam"
-                margin-left: 5
-            }
-
-            checkbox #hold -autoclicker:config.properties:right-hold {}
-            label {
-                inner-text: "Spam only when hold"
-                margin-left: 5
-            }
-
-            slider #cps -autoclicker:config.properties:right-cps {
-                width: 80
-                range: 1 100
-                decimal-places: 0
-            }
-            label {
-                inner-text: "CPS"
-                margin-left: 45
-                margin-top: 3
-            }
-
-            slider #chance -autoclicker:config.properties:right-chance {
-                width: 80
-                range: 0 1
-                decimal-places: 2
-            }
-            label {
-                inner-text: "Random"
-                margin-left: 45
-                margin-top: 3
-            }
-        }
-    }
-
-    div #panel -bottom {
-        margin: 5
-        size: 410 100
-        background-color: #80000000
-        background-clip: margin
-        border-radius: 3
-        shadow-distance: 3
-        shadow-color: orange
-
-        div #title-shadow {
-            size: 100% 20
-            background-color: none
-            shadow-distance: 3
-            shadow-color: orange
-            opacity: 0.5
-        }
-
-        h4 {
-            inner-text: "Shared"
-            inner-text-prefix: "&r"
-            text-shadow: true
-            text-color: orange
-            margin-top: 6
-            center: horizontal
-        }
-
-        div #settings {
-            size: 400 70
-            y: 20
-            x: 5
-            margin-left: 5
-            background-color: none
-            background-clip: margin
-
-            child-align: grid
-            grid-columns: 2
-
-            scrollable: true
-
-            slider #chance -autoclicker:config.properties:max-attack-cooldown {
-                width: 80
-                range: 0 1
-                decimal-places: 2
-            }
-            label {
-                inner-text: "Max attack cooldown"
-                margin-left: 45
-                margin-top: 3
-                click-through: true
-            }
-
-            checkbox #enabled -autoclicker:config.properties:only-when-target {}
-            label {
-                inner-text: "Only when targeting entity"
-                margin-left: 5
-                click-through: true
-            }
-
-            checkbox #spam -autoclicker:config.properties:no-babies {}
-            label {
-                inner-text: "Stop when targeting baby entity"
-                margin-left: 5
-                click-through: true
-            }
-
-            checkbox #hold -autoclicker:config.properties:stop-when-target {}
-            label {
-                inner-text: "Stop when targeting entity"
-                margin-left: 5
-                click-through: true
-            }
-
-            checkbox #hold -autoclicker:config.properties:stop-when-damage {}
-            label {
-                inner-text: "Stop when take damage"
-                margin-left: 5
-                click-through: true
-            }
-
-            checkbox #hold -autoclicker:config.properties:stop-when-move {}
-            label {
-                inner-text: "Stop when player move"
-                margin-left: 5
-                click-through: true
-            }
-
-            checkbox #hold -autoclicker:config.properties:debug {}
-            label {
-                inner-text: "Send debug messages for noise distribution"
-                margin-left: 5
-                click-through: true
-            }
+        div #row4 {
+            child-align: horizontal
+            checkbox -autoclicker:config.properties:only-when-target { size: 8 8 }
+            label { inner-text: " Only when targeting"; margin-left: 6; text-scale: 0.8 }
         }
     }
 }
-
-
-

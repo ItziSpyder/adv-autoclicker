@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
+import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
 
 public class AutoClicker implements ModInitializer, Global {
@@ -16,7 +17,7 @@ public class AutoClicker implements ModInitializer, Global {
             "binds.autoclicker.menu",
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_0,
-            "binds.autoclicker"
+            KeyBinding.Category.create(Identifier.of("binds.autoclicker"))
     ));
 
     @Override
